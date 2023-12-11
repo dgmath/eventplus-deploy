@@ -10,7 +10,7 @@ import "./LoginPage.css";
 import { UserContext, userDecodeToken } from "../../context/AuthContext";
 
 const LoginPage = () => {
-  const [user, setUser] = useState({ email: "edu@admin.com", senha: "123456" });
+  const [user, setUser] = useState({ email: "", senha: "" });
   //importa os dados globais do usuário
   const { userData, setUserData } = useContext(UserContext);
   const navigate = useNavigate();
@@ -79,7 +79,7 @@ const LoginPage = () => {
                   email: e.target.value.trim(),
                 });
               }}
-              placeholder="Username"
+              placeholder="Digite seu email:"
             />
             <Input
               additionalClass="frm-login__entry"
@@ -94,7 +94,7 @@ const LoginPage = () => {
                   senha: e.target.value.trim(),
                 });
               }}
-              placeholder="****"
+              placeholder="Digite sua senha:"
             />
 
             <a href="" className="frm-login__link">
