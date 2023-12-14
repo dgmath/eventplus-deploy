@@ -5,9 +5,12 @@ import editPen from "../../../assets/images/edit-pen.svg";
 import trashDelete from "../../../assets/images/trash-delete.svg";
 import { dateFormateDbToView } from "../../../Utils/stringFunctions";
 
+import olhinho from "../../../assets/images/olhinho.svg"
+
 // importa a biblioteca de tootips ()
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import { Link } from "react-router-dom";
 
 // import trashDelete from "../../../assets/images/trash-delete.svg";
 
@@ -28,6 +31,9 @@ const Table = ({ dados, fnDelete = null, fnUpdate = null }) => {
           </th>
           <th className="table-data__head-title table-data__head-title--big">
             Data
+          </th>
+          <th className="table-data__head-title table-data__head-title--big">
+            Ver
           </th>
           <th className="table-data__head-title table-data__head-title--little">
             Editar
@@ -62,6 +68,13 @@ const Table = ({ dados, fnDelete = null, fnUpdate = null }) => {
               <td className="table-data__data table-data__data--big">
                 {dateFormateDbToView(tp.dataEvento)}
               </td>
+
+              <td className="table-data__data table-data__data--big">
+                <Link to={"/detalhes-evento"} state={tp}>
+                    <img src={olhinho} alt="" />
+                </Link>
+              </td>
+
 
               <td className="table-data__data table-data__data--little">
                 <img

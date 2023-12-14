@@ -32,6 +32,9 @@ const Nav = ({ exibeNavbar, setExibeNavbar }) => {
         <Link to="/" className="navbar__item">
           Home
         </Link>
+        <Link to="/detalhes-evento" className="navbar__item">
+          Detalhes
+        </Link>
 
         {userData.nome && userData.role === "Administrador" ? (
           <>

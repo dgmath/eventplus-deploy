@@ -11,6 +11,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { PrivateRoute } from "./PrivateRoute";
 import EventosAlunoPage from "../pages/EventosAlunoPage/EventosAlunoPage";
+import DetalhesEvento from "../pages/DetalhesEvento/DetalhesEvento";
 
 // Componente Rota
 const Rotas = () => {
@@ -20,6 +21,7 @@ const Rotas = () => {
 
       <Routes>
         <Route element={<HomePage />} path="/" exact />
+        <Route element={<DetalhesEvento />} path="/detalhes-evento" exact />
 
         <Route
           path="/tipo-eventos"

@@ -48,6 +48,7 @@ const EventosAlunoPage = () => {
       //todos os eventos (Evento)
       try {
         const todosEventos = await api.get(eventsResource);
+        
         const meusEventos = await api.get(
           `${myEventsResource}/${userData.userId}`
         );
@@ -150,19 +151,23 @@ const EventosAlunoPage = () => {
     try {
       // api está retornando sempre todos os comentários do usuário
       const promise = await api.get(
-        `${commentaryEventResource}?idUsuario=${idUsuario}&idEvento=${idEvento}`
+        `${commentaryEventResource}/BuscarPorIdUsuario?idUsuario=${idUsuario}&idEvento=${idEvento}`
       );
 
-      const myComm = await promise.data.filter(
-        (comm) => comm.idEvento === idEvento && comm.idUsuario === idUsuario
-      );
+      setComentario(promise.data.descricao);
+      setIdComentario(promise.data.idComentarioEvento);
+      //   console.log( `${commentaryEventResource}/BuscarPorIdUsuario?idUsuario=${idUsuario}&idEvento=${idEvento}`);
+      // const myComm = await promise.data.filter(
+      //   (comm) => comm.idEvento === idEvento && comm.idUsuario === idUsuario
+      // );
 
       // console.log("QUANTIDADE DE DADOS NO ARRAY FILTER");
       // console.log(myComm.length);
       // console.log(myComm);
 
-      setComentario(myComm.length > 0 ? myComm[0].descricao : "");
-      setIdComentario(myComm.length > 0 ? myComm[0].idComentarioEvento : null);
+      // setComentario(myComm.length > 0 ? myComm[0].descricao : "");
+      // setIdComentario(myComm.length > 0 ? myComm[0].idComentarioEvento : null);
+      console.log(promise.data);
     } catch (error) {
       console.log("Erro ao carregar o evento");
       console.log(error);
