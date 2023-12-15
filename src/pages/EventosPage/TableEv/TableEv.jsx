@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 // import trashDelete from "../../../assets/images/trash-delete.svg";
 
 const Table = ({ dados, fnDelete = null, fnUpdate = null }) => {
+  
   // console.log(dados);
   return (
     <table className="table-data">
@@ -32,7 +33,7 @@ const Table = ({ dados, fnDelete = null, fnUpdate = null }) => {
           <th className="table-data__head-title table-data__head-title--big">
             Data
           </th>
-          <th className="table-data__head-title table-data__head-title--big">
+          <th className="table-data__head-title table-data__head-title--little">
             Ver
           </th>
           <th className="table-data__head-title table-data__head-title--little">
@@ -69,9 +70,9 @@ const Table = ({ dados, fnDelete = null, fnUpdate = null }) => {
                 {dateFormateDbToView(tp.dataEvento)}
               </td>
 
-              <td className="table-data__data table-data__data--big">
+              <td className="table-data__data table-data__data--little">
                 <Link to={"/detalhes-evento"} state={tp}>
-                    <img src={olhinho} alt="" />
+                    <img className="olho" src={olhinho} alt="" />
                 </Link>
               </td>
 

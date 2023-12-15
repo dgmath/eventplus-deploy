@@ -22,6 +22,7 @@ export const presencesEventResource = '/PresencasEvento';
  * Rota para o recurso Presenças Evento
  */
 export const commentaryEventResource = '/ComentariosEvento';
+export const commentaryEventResourceIa = '/ComentariosEvento/PostWithIA';
 
 /**
  * Rota para o recurso Próximos Eventos
@@ -40,13 +41,13 @@ export const institutionResource = '/Instituicao';
  */
 export const loginResource = '/Login';
 
-const apiPort = '5000';
-const localApiUri = `http://localhost:${apiPort}/api`;
+// const apiPort = '5000';
+// const localApiUri = `http://localhost:${apiPort}/api`;
 const externalUrlApi = `https://eventmatheus.azurewebsites.net/api`;
 // const externalApiUri = null;
 
 const api = axios.create({
-    baseURL: localApiUri
+    baseURL: externalUrlApi
 });
 
 

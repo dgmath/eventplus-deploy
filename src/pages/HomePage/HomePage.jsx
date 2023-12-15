@@ -112,6 +112,7 @@ const HomePage = () => {
                       description={e.descricao}
                       eventDate={e.dataEvento}
                       idEvento={e.idEvento}
+                      typeEvent={e.tiposEvento}
                     />
                   </SwiperSlide>
                 );

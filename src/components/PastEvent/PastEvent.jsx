@@ -4,16 +4,15 @@ import { dateFormatDbToView } from "../../Utils/stringFunctions";
 import { Tooltip } from "react-tooltip";
 import { Link } from "react-router-dom";
 
-const PastEvent = ({ title, description, eventDate, idEvento }) => {
-  function conectar(idEvento) {
-    ;
-  }
+const PastEvent = ({ title, description, eventDate, idEvento, typeEvent }) => {
+
 
   const objeto = {
     nomeEvento : title,
     descricao : description,
     dataEvento : eventDate,
-    idEvento : idEvento
+    idEvento : idEvento,
+    tiposEvento: typeEvent,
   }
 
   return (

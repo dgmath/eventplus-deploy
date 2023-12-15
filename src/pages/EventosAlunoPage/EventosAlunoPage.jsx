@@ -11,6 +11,7 @@ import api, {
   myEventsResource,
   presencesEventResource,
   commentaryEventResource,
+  commentaryEventResourceIa,
 } from "../../Services/Service";
 
 import "./EventosAlunoPage.css";
@@ -177,9 +178,8 @@ const EventosAlunoPage = () => {
   // cadastrar um comentário = post
   const postMyCommentary = async (descricao, idUsuario, idEvento) => {
     try {
-      const promise = await api.post(commentaryEventResource, {
+      const promise = await api.post(commentaryEventResourceIa, {
         descricao: descricao,
-        exibe: true,
         idUsuario: idUsuario,
         idEvento: idEvento,
       });
